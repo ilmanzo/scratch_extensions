@@ -11,7 +11,7 @@ usage:
 - give the file just downloaded
 - you should have some new "blocks" defined
 
-how it works ?
+how does it work ?
 
 http://wiki.scratch.mit.edu/wiki/Scratch_Extension#HTTP_Extensions
 
