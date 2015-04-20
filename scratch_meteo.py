@@ -3,7 +3,7 @@
 #per usarla: 
 # - eseguire questo script
 # - collegarsi con un browser a http://localhost:4000
-# - scaricare il file .json proposto dal primo link
+# - scaricare il file .s2e proposto dal primo link
 # - aprire scratch e fare click sul menu "File" tenendo premuto il tasto shift
 # - importare il file json scaricato prima (contiene la definizione dell'estensione)
 # - tenere in esecuzione questo script
