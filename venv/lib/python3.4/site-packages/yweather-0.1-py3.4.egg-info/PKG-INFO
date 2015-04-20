@@ -1,0 +1,101 @@
+Metadata-Version: 1.1
+Name: yweather
+Version: 0.1
+Summary: a Python module that provides an interface to the Yahoo! Weather RSS feed.
+Home-page: https://github.com/tsroten/yweather
+Author: Thomas Roten
+Author-email: thomas@roten.us
+License: UNKNOWN
+Description: yweather
+        ========
+        
+        About
+        -----
+        
+        yweather is a Python module that provides an interface to the `Yahoo! Weather RSS feed <http://developer.yahoo.com/weather/>`_.
+        
+        International Support
+        ---------------------
+        
+        ::
+        
+            >>> client.fetch_woeid("Paris, France")
+            '615702'
+            >>> client.fetch_woeid("Seattle, Washington")
+            '2490383'
+        
+        Location and weather data is not limited to a single country. Fetch data for any location that is available on Yahoo! Weather.
+        
+        Different countries use different measurement systems (unfortunately). Fetch data according to United States customary units or the metric system.::
+        
+            >>> paris_weather = client.fetch_weather("615702", metric=True)
+            >>> seattle_weather = client.fetch_weather("2490383", metric=False)
+        
+        Data is Returned as a Dict
+        --------------------------
+        
+        ::
+        
+            >>> norfolk_weather = client.fetch_weather("2460389")
+            >>> norfolk_weather["astronomy"]["sunrise"]
+            '7:18 am'
+            >>> norfolk_weather["condition"]["text"]
+            'Partly Cloudy'
+        
+        Weather data is returned as a Python ``dict``, not as an object of a confusing class.
+        
+        No API Keys or Signup Needed
+        ----------------------------
+        
+        Unlike many weather APIs, Yahoo! Weather's RSS feed doesn't require sign ups, API keys, or special authorization to fetch and use their data. All you have to do is follow their `Terms of Use <http://developer.yahoo.com/weather/#terms>`_.
+        
+        No Manual ID Lookups
+        --------------------
+        
+        ::
+        
+            >>> client.fetch_woeid("Raleigh, North Carolina")
+            '2478307'
+            >>> client.fetch_lid("2379574")
+            'USIL0228'
+        
+        yweather doesn't assume you know location identifiers off the top of your head. You can call the ``fetch_woeid`` or ``fetch_lid`` methods to lookup a location's WOEID or LID. WOEID is Yahoo! Weather's location identifier. LID is The Weather Channel's location identifier.
+        
+        5-day Forecast Support
+        ----------------------
+        
+        ::
+        
+            >>> london_weather = client.fetch_weather("UKXX0085")
+            >>> len(london_weather["forecast"])
+            5
+        
+        By using a The Weather Channel Location ID (LID), you can fetch a location's 5-day weather forecast. A little warning though -- it's using an undocumented API. If you aren't up for it, you can still get the 2-day forecast using a WOEID.
+        
+        Documentation
+        -------------
+        
+        yweather includes complete and easy-to-read `documentation <https://yweather.readthedocs.org/>`_. Check it out for a gentle introduction or the full API details.
+        
+        Bug/Issues Tracker
+        ------------------
+        
+        yweather uses its `GitHub Issues page <https://github.com/tsroten/yweather/issues>`_ to track bugs, feature requests, and support questions.
+        
+        License
+        -------
+        
+        yweather is released under the OSI-approved `MIT License <http://opensource.org/licenses/MIT>`_. See the file LICENSE.txt for more information.
+        
+Keywords: weather,yahoo,interface,wrapper,api
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3

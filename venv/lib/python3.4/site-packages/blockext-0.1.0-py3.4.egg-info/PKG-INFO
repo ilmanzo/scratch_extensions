@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: blockext
+Version: 0.1.0
+Summary: Module for writing Scratch 2.0 and Snap! extensions
+Home-page: https://github.com/blockext/blockext
+Author: Tim Radvan, Connor Hudson
+Author-email: blob8108@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
